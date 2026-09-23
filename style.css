@@ -647,3 +647,127 @@ tbody tr:hover {
     opacity: 1;
     transform: scale(1.1);      /* cresce 10% ao receber o mouse */
 }
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* @media (adicional): as regras abaixo só valem em telas de até 900px (tablets) */
+@media (max-width: 900px) {
+    #cabecalho {
+        justify-content: center;    /* nome e menu centralizados quando o menu desce de linha */
+        padding: 16px 20px;
+    }
+
+    #inicio h1 {
+        font-size: 36px;
+    }
+
+    #sistema {
+        border-radius: 30px;        /* cantos menos arredondados quando os astros quebram de linha */
+    }
+
+    #sol {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* Dois cartões e duas curiosidades por linha */
+    .cartao {
+        width: calc(50% - 12px);
+    }
+
+    .curiosidade {
+        width: calc(50% - 10px);
+    }
+}
+
+/* Telas de até 600px (celulares) */
+@media (max-width: 600px) {
+    body {
+        font-size: 15px;
+    }
+
+    #cabecalho {
+        flex-direction: column;     /* nome em cima e menu embaixo */
+        gap: 10px;
+    }
+
+    #menu ul {
+        justify-content: center;
+    }
+
+    #menu a {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    #inicio {
+        padding: 40px 16px 30px;
+    }
+
+    #inicio h1 {
+        font-size: 28px;
+    }
+
+    .subtitulo {
+        font-size: 16px;
+    }
+
+    #sistema {
+        padding: 16px 8px;
+        border-radius: 20px;
+    }
+
+    #sol {
+        width: 80px;
+        height: 80px;
+    }
+
+    .astro {
+        margin: 6px;
+    }
+
+    .secao {
+        padding: 40px 16px;
+    }
+
+    .titulo-secao {
+        font-size: 26px;
+    }
+
+    /* Um cartão e uma curiosidade por linha */
+    .cartao,
+    .curiosidade {
+        width: 100%;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    /* Linha do tempo mais estreita: a linha e as bolinhas acompanham o novo espaço */
+    .linha-do-tempo {
+        padding: 0 0 0 36px;
+    }
+
+    .linha-do-tempo::before {
+        left: 10px;
+    }
+
+    .evento::before {
+        left: -33px;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    #voltar-topo {
+        right: 16px;
+        bottom: 16px;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+    }
+}
