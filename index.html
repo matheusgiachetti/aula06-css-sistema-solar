@@ -43,6 +43,63 @@
          A tag main agrupa todas as seções da página. Cada seção tem um id
          que é usado pelos links do menu para a navegação por âncora. -->
     <main>
+
+        <!-- ===== SEÇÃO INICIAL ===== -->
+        <section id="inicio">
+            <h1>Uma viagem pelo Sistema Solar</h1>
+            <p class="subtitulo">
+                O Sistema Solar é formado pelo Sol e por tudo o que gira ao seu redor: oito planetas,
+                centenas de luas, planetas anões, asteroides e cometas. Conheça cada planeta, compare
+                seus números e descubra as missões que ajudaram a explorá-los.
+            </p>
+            <!-- Desenho do Sistema Solar feito somente com CSS:
+                 cada astro é uma div vazia que vira um círculo com border-radius.
+                 A classe "corpo" dá o formato; a classe com o nome do planeta dá a cor. -->
+            <div id="sistema">
+                <!-- O Sol é um elemento único, por isso usa id="sol" -->
+                <div class="astro">
+                    <div id="sol" class="corpo"></div>
+                    <span class="rotulo">Sol</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo mercurio"></div>
+                    <span class="rotulo">Mercúrio</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo venus"></div>
+                    <span class="rotulo">Vênus</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo terra"></div>
+                    <span class="rotulo">Terra</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo marte"></div>
+                    <span class="rotulo">Marte</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo jupiter"></div>
+                    <span class="rotulo">Júpiter</span>
+                </div>
+                <div class="astro">
+                    <!-- Saturno recebe um anel criado com o pseudo-elemento ::after no CSS -->
+                    <div class="corpo saturno"></div>
+                    <span class="rotulo">Saturno</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo urano"></div>
+                    <span class="rotulo">Urano</span>
+                </div>
+                <div class="astro">
+                    <div class="corpo netuno"></div>
+                    <span class="rotulo">Netuno</span>
+                </div>
+            </div>
+            <p class="nota">Os tamanhos e as distâncias do desenho não estão em escala real.</p>
+            <!-- Link com aparência de botão (classe reaproveitável "botao") que leva aos cartões -->
+            <a href="#planetas" class="botao">Conhecer os planetas</a>
+        </section>
+
     </main>
 
 </body>

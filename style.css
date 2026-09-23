@@ -103,3 +103,153 @@ a {
     background-color: #ffcc33;
     color: #0b1026;
 }
+
+/* ---------- SEÇÃO INICIAL ---------- */
+
+#inicio {
+    padding: 70px 20px 50px;    /* padding com três valores: topo, laterais e base */
+    text-align: center;         /* centraliza o título, o texto e o botão */
+    background-color: #0b1026;
+    /* adicional: degradê circular que simula um brilho no alto do "céu" */
+    background-image: radial-gradient(circle at top, #1d2a6b 0%, #0b1026 70%);
+}
+
+#inicio h1 {
+    margin: 0 0 16px;           /* margin com três valores: só espaço embaixo do título */
+    font-size: 44px;
+    color: #ffcc33;             /* amarelo-sol para o título principal */
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(255, 204, 51, 0.45);
+}
+
+.subtitulo {
+    max-width: 680px;           /* adicional: limita a largura do texto para as linhas não ficarem longas */
+    margin: 0 auto;             /* auto nas laterais centraliza o bloco na página */
+    font-size: 18px;
+    color: #c9cfe8;
+}
+
+/* Faixa que contém o Sol e os planetas */
+#sistema {
+    display: flex;              /* flex: astros lado a lado */
+    flex-wrap: wrap;            /* adicional: em telas pequenas os astros descem de linha */
+    justify-content: center;
+    align-items: center;        /* alinha astros de tamanhos diferentes pelo centro */
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    padding: 30px 20px;
+    border: 1px dashed #2a3570; /* borda tracejada lembrando uma órbita */
+    border-radius: 100px;
+}
+
+/* Cada astro: círculo em cima e nome embaixo */
+.astro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;               /* margin uniforme: mesmo espaço em volta de cada astro */
+}
+
+/* Formato comum a todos os astros */
+.corpo {
+    border-radius: 50%;                                   /* transforma a div em círculo */
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.45); /* sombra interna dá sensação de volume */
+    transition: transform 0.3s;
+}
+
+/* Ao passar o mouse, o astro cresce (transform: scale) */
+.astro:hover .corpo {
+    transform: scale(1.2);
+}
+
+/* Nome do astro, levemente transparente até receber o mouse */
+.rotulo {
+    margin-top: 8px;
+    font-size: 13px;
+    opacity: 0.7;               /* adicional: 70% de opacidade deixa o nome mais discreto */
+    transition: opacity 0.3s, color 0.3s;
+}
+
+.astro:hover .rotulo {
+    opacity: 1;
+    color: #ffcc33;
+}
+
+/* O Sol: maior astro do desenho, com degradê e brilho */
+#sol {
+    width: 130px;
+    height: 130px;
+    background-color: #ffcc33;
+    background-image: radial-gradient(circle at 35% 35%, #fff3b0, #ffcc33 45%, #ff9a1f);
+    box-shadow: 0 0 40px #ffb627, 0 0 90px rgba(255, 154, 31, 0.6);
+}
+
+/* Tamanho de cada planeta no desenho (width e height iguais formam círculos) */
+#sistema .mercurio { width: 14px; height: 14px; }
+#sistema .venus    { width: 22px; height: 22px; }
+#sistema .terra    { width: 24px; height: 24px; }
+#sistema .marte    { width: 18px; height: 18px; }
+#sistema .jupiter  { width: 64px; height: 64px; }
+#sistema .saturno  { width: 52px; height: 52px; }
+#sistema .urano    { width: 34px; height: 34px; }
+#sistema .netuno   { width: 32px; height: 32px; }
+
+/* Cor de cada planeta: classes reaproveitadas no desenho, nos cartões e na tabela */
+.mercurio { background-color: #9e9e9e; }
+.venus    { background-color: #e8c07d; }
+.terra    { background-color: #3d7dd8; }
+.marte    { background-color: #c1440e; }
+.jupiter  { background-color: #d8a36a; }
+.saturno  { background-color: #e3cf8f; }
+.urano    { background-color: #8fd8e0; }
+.netuno   { background-color: #3f5fd9; }
+
+/* Saturno fica com position: relative para servir de referência ao anel */
+#sistema .saturno {
+    position: relative;
+}
+
+/* Anel de Saturno: position: absolute + top, left e right o posicionam
+   exatamente em volta do planeta */
+#sistema .saturno::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -16px;
+    right: -16px;
+    height: 12px;
+    border: 3px solid #cbb577;
+    border-radius: 50%;
+    transform: rotate(-20deg);  /* adicional: inclina o anel */
+}
+
+/* Aviso sobre a escala do desenho */
+.nota {
+    font-size: 13px;
+    font-style: italic;
+    opacity: 0.6;
+}
+
+/* ---------- BOTÃO (classe reaproveitada em vários lugares) ---------- */
+
+.botao {
+    display: inline-block;
+    padding: 12px 28px;
+    background-color: #ffcc33;
+    color: #0b1026;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #ffcc33;
+    border-radius: 30px;
+    cursor: pointer;            /* adicional: mãozinha indica que o elemento é clicável */
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+/* No hover/focus o botão fica "vazado" e sobe um pouco */
+.botao:hover,
+.botao:focus {
+    background-color: transparent;
+    color: #ffcc33;
+    transform: translateY(-3px);
+}
