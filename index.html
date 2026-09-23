@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<!-- Declaração do tipo de documento: informa ao navegador que a página usa HTML5 -->
+<!-- Documento HTML5 -->
 <html lang="pt-BR">
-<!-- lang="pt-BR" indica que o conteúdo está em português do Brasil (ajuda leitores de tela e tradutores) -->
 <head>
-    <!-- Codificação UTF-8: permite exibir acentos e caracteres especiais corretamente -->
+    <!-- UTF-8 para exibir os acentos corretamente -->
     <meta charset="UTF-8">
-    <!-- Viewport: faz a página se ajustar à largura da tela de tablets e celulares (base da responsividade) -->
+    <!-- viewport: faz a página se ajustar à largura do celular e do tablet -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Descrição da página, usada por mecanismos de busca -->
-    <meta name="description" content="Guia do Sistema Solar: planetas, dados comparativos, missões espaciais e curiosidades.">
-    <!-- Título exibido na aba do navegador -->
+    <meta name="description" content="Guia do Sistema Solar: os planetas, uma tabela comparativa, missões espaciais e curiosidades.">
     <title>Guia do Sistema Solar</title>
-    <!-- CSS EXTERNO: todo o estilo da página fica no arquivo style.css, ligado aqui pela tag link -->
+    <!-- CSS externo: todo o visual da página está no style.css -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ===== CABEÇALHO =====
-         id="cabecalho" porque é um elemento único na página (estilizado com seletor de ID no CSS).
-         Ele também é o destino do botão "voltar ao topo". -->
+    <!-- CABEÇALHO: elemento único, por isso usa id -->
     <header id="cabecalho">
-        <!-- Nome do site: o link leva de volta para a seção inicial -->
+        <!-- Nome do site; o small vira uma segunda linha pelo CSS -->
         <a href="#inicio" class="logo">
-            <!-- span vazio com a classe "logo-simbolo": um pequeno sol desenhado só com CSS -->
-            <span class="logo-simbolo"></span>
             Guia do Sistema Solar
+            <small>trabalho de Web Design · Facens 2026</small>
         </a>
-        <!-- Menu de navegação: cada link aponta para o id de uma seção (navegação por âncora) -->
+        <!-- Menu: cada link leva ao id de uma seção (navegação por âncora) -->
         <nav id="menu" aria-label="Menu principal">
             <ul>
-                <li><a href="#inicio">Início</a></li>
                 <li><a href="#planetas">Planetas</a></li>
                 <li><a href="#comparativo">Comparativo</a></li>
                 <li><a href="#missoes">Missões</a></li>
@@ -39,24 +32,23 @@
         </nav>
     </header>
 
-    <!-- ===== CONTEÚDO PRINCIPAL =====
-         A tag main agrupa todas as seções da página. Cada seção tem um id
-         que é usado pelos links do menu para a navegação por âncora. -->
     <main>
 
-        <!-- ===== SEÇÃO INICIAL ===== -->
+        <!-- SEÇÃO INICIAL: apresentação e desenho dos planetas -->
         <section id="inicio">
-            <h1>Uma viagem pelo Sistema Solar</h1>
-            <p class="subtitulo">
-                O Sistema Solar é formado pelo Sol e por tudo o que gira ao seu redor: oito planetas,
-                centenas de luas, planetas anões, asteroides e cometas. Conheça cada planeta, compare
-                seus números e descubra as missões que ajudaram a explorá-los.
+            <h1>O Sistema Solar, planeta por planeta</h1>
+            <p>
+                Fizemos este guia para juntar num só lugar o que achamos mais interessante sobre os
+                oito planetas: como cada um é, alguns números para comparar e as missões que foram até lá.
             </p>
-            <!-- Desenho do Sistema Solar feito somente com CSS:
-                 cada astro é uma div vazia que vira um círculo com border-radius.
-                 A classe "corpo" dá o formato; a classe com o nome do planeta dá a cor. -->
+            <p>
+                O desenho abaixo foi feito só com CSS. Os tamanhos não estão em escala: se estivessem,
+                Júpiter seria umas onze vezes mais largo que a Terra e o Sol quase não caberia na tela.
+            </p>
+            <!-- Cada astro é uma div vazia que vira círculo no CSS.
+                 A classe "corpo" dá o formato e a classe com o nome do planeta dá a cor. -->
             <div id="sistema">
-                <!-- O Sol é um elemento único, por isso usa id="sol" -->
+                <!-- O Sol é único, então recebe id -->
                 <div class="astro">
                     <div id="sol" class="corpo"></div>
                     <span class="rotulo">Sol</span>
@@ -82,7 +74,7 @@
                     <span class="rotulo">Júpiter</span>
                 </div>
                 <div class="astro">
-                    <!-- Saturno recebe um anel criado com o pseudo-elemento ::after no CSS -->
+                    <!-- O anel de Saturno é feito com ::after no CSS -->
                     <div class="corpo saturno"></div>
                     <span class="rotulo">Saturno</span>
                 </div>
@@ -95,139 +87,124 @@
                     <span class="rotulo">Netuno</span>
                 </div>
             </div>
-            <p class="nota">Os tamanhos e as distâncias do desenho não estão em escala real.</p>
-            <!-- Link com aparência de botão (classe reaproveitável "botao") que leva aos cartões -->
-            <a href="#planetas" class="botao">Conhecer os planetas</a>
+            <!-- Link com a classe "botao", a mesma usada no formulário e no voltar ao topo -->
+            <a href="#planetas" class="botao">Ver os planetas</a>
         </section>
 
-        <!-- ===== CARTÕES DOS PLANETAS =====
-             A classe "secao" é reaproveitada por todas as seções de conteúdo
-             para manter a mesma largura máxima e o mesmo espaçamento. -->
+        <!-- PLANETAS: um cartão para cada planeta.
+             A classe "secao" deixa todas as seções com a mesma largura e espaçamento. -->
         <section id="planetas" class="secao">
-            <h2 class="titulo-secao">Os oito planetas</h2>
+            <h2>Os planetas</h2>
             <p class="intro-secao">
-                Os planetas são divididos em três grupos: os rochosos, mais próximos do Sol; os gigantes
-                gasosos, formados principalmente por hidrogênio e hélio; e os gigantes de gelo, os mais distantes.
+                Os quatro primeiros são rochosos. Depois vêm dois gigantes gasosos e, mais longe,
+                dois gigantes de gelo.
             </p>
-            <!-- Contêiner flex que organiza os cartões em linhas -->
             <div class="cartoes">
-                <!-- Cartão de Mercúrio. A classe "cartao" é a mesma para os oito planetas. -->
+                <!-- Cartão: a etiqueta fica presa no canto com position: absolute -->
                 <article class="cartao">
-                    <!-- Etiqueta do tipo, posicionada no canto do cartão com position: absolute -->
-                    <span class="etiqueta tipo-rochoso">Rochoso</span>
-                    <!-- Miniatura do planeta: reaproveita a classe de cor usada no desenho inicial -->
+                    <span class="etiqueta tipo-rochoso">rochoso</span>
                     <div class="miniatura mercurio"></div>
                     <h3>Mercúrio</h3>
-                    <p>O menor planeta e o mais próximo do Sol. Quase sem atmosfera, vai de 430 °C durante o dia a −180 °C à noite.</p>
+                    <p>É o menor planeta e o mais perto do Sol. Como quase não tem atmosfera, esquenta muito de dia e congela à noite.</p>
                     <ul class="fatos">
-                        <li>1º planeta a partir do Sol</li>
-                        <li>Um dia solar dura 176 dias terrestres</li>
+                        <li>De 430 °C a −180 °C</li>
+                        <li>Um dia dura 176 dias da Terra</li>
                     </ul>
                 </article>
-                <!-- Cartão de Vênus -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <span class="etiqueta tipo-rochoso">rochoso</span>
                     <div class="miniatura venus"></div>
                     <h3>Vênus</h3>
-                    <p>O planeta mais quente do Sistema Solar. Sua atmosfera espessa de gás carbônico prende o calor como uma estufa.</p>
+                    <p>Tem quase o tamanho da Terra, mas é coberto por nuvens grossas que prendem o calor. É o planeta mais quente de todos.</p>
                     <ul class="fatos">
-                        <li>Temperatura média de cerca de 464 °C</li>
-                        <li>Gira no sentido contrário ao da Terra</li>
+                        <li>Cerca de 464 °C na superfície</li>
+                        <li>Gira ao contrário da Terra</li>
                     </ul>
                 </article>
-                <!-- Cartão da Terra -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <span class="etiqueta tipo-rochoso">rochoso</span>
                     <div class="miniatura terra"></div>
                     <h3>Terra</h3>
-                    <p>Nosso planeta, o único onde se conhece a existência de vida, graças à água líquida e à atmosfera protetora.</p>
+                    <p>O único lugar onde sabemos que existe vida. A água líquida e a atmosfera fazem toda a diferença.</p>
                     <ul class="fatos">
-                        <li>Cerca de 71% da superfície é água</li>
-                        <li>Uma lua natural: a Lua</li>
+                        <li>71% da superfície é água</li>
+                        <li>Uma lua</li>
                     </ul>
                 </article>
-                <!-- Cartão de Marte -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <span class="etiqueta tipo-rochoso">rochoso</span>
                     <div class="miniatura marte"></div>
                     <h3>Marte</h3>
-                    <p>O "planeta vermelho" deve sua cor ao óxido de ferro do solo. Abriga o Monte Olimpo, o maior vulcão conhecido.</p>
+                    <p>A cor avermelhada vem da ferrugem (óxido de ferro) do solo. É o planeta que mais recebeu sondas e robôs.</p>
                     <ul class="fatos">
                         <li>Um dia dura 24 h 37 min</li>
                         <li>Luas: Fobos e Deimos</li>
                     </ul>
                 </article>
-                <!-- Cartão de Júpiter -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-gasoso">Gasoso</span>
+                    <span class="etiqueta tipo-gasoso">gasoso</span>
                     <div class="miniatura jupiter"></div>
                     <h3>Júpiter</h3>
-                    <p>O maior planeta do Sistema Solar: caberiam mais de 1.300 Terras dentro dele. Tem a famosa Grande Mancha Vermelha.</p>
+                    <p>O maior de todos: mais de 1.300 Terras caberiam dentro dele. Tem uma tempestade gigante, a Grande Mancha Vermelha.</p>
                     <ul class="fatos">
                         <li>Um dia dura cerca de 10 horas</li>
                         <li>Maior lua: Ganimedes</li>
                     </ul>
                 </article>
-                <!-- Cartão de Saturno -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-gasoso">Gasoso</span>
+                    <span class="etiqueta tipo-gasoso">gasoso</span>
                     <div class="miniatura saturno"></div>
                     <h3>Saturno</h3>
-                    <p>Famoso pelos anéis de gelo e rocha, é tão pouco denso que, em teoria, flutuaria em uma banheira gigante.</p>
+                    <p>Os anéis são feitos de pedaços de gelo e rocha. O planeta é tão leve para o tamanho que boiaria na água.</p>
                     <ul class="fatos">
                         <li>Um dia dura cerca de 10 h 30 min</li>
                         <li>Maior lua: Titã</li>
                     </ul>
                 </article>
-                <!-- Cartão de Urano -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-gelo">Gigante de gelo</span>
+                    <span class="etiqueta tipo-gelo">gigante de gelo</span>
                     <div class="miniatura urano"></div>
                     <h3>Urano</h3>
-                    <p>Gira "deitado", com o eixo inclinado cerca de 98°. O metano da atmosfera dá a ele a cor azul-esverdeada.</p>
+                    <p>Gira praticamente deitado, com o eixo inclinado uns 98°. A cor azulada vem do metano da atmosfera.</p>
                     <ul class="fatos">
                         <li>Um dia dura cerca de 17 horas</li>
-                        <li>Descoberto em 1781 por William Herschel</li>
+                        <li>Descoberto em 1781</li>
                     </ul>
                 </article>
-                <!-- Cartão de Netuno -->
                 <article class="cartao">
-                    <span class="etiqueta tipo-gelo">Gigante de gelo</span>
+                    <span class="etiqueta tipo-gelo">gigante de gelo</span>
                     <div class="miniatura netuno"></div>
                     <h3>Netuno</h3>
-                    <p>O planeta mais distante do Sol, com os ventos mais fortes do Sistema Solar. Foi descoberto por cálculos matemáticos.</p>
+                    <p>O mais distante do Sol. Foi encontrado primeiro nas contas, antes de alguém conseguir vê-lo no telescópio.</p>
                     <ul class="fatos">
-                        <li>Um dia dura cerca de 16 horas</li>
+                        <li>Ventos de mais de 2.000 km/h</li>
                         <li>Maior lua: Tritão</li>
                     </ul>
                 </article>
             </div>
         </section>
 
-        <!-- ===== TABELA COMPARATIVA ===== -->
+        <!-- COMPARATIVO: tabela com os números de cada planeta -->
         <section id="comparativo" class="secao">
-            <h2 class="titulo-secao">Tabela comparativa</h2>
+            <h2>Comparando os números</h2>
             <p class="intro-secao">
-                Compare os principais números de cada planeta. Os valores são médias aproximadas
-                e o número de luas muda sempre que novas luas são confirmadas.
+                Valores médios, tirados do site da NASA. O número de luas muda de vez em quando,
+                porque novas luas continuam sendo descobertas.
             </p>
-            <!-- Contêiner que permite rolar a tabela na horizontal em telas pequenas -->
+            <!-- Esta div deixa rolar a tabela para o lado no celular -->
             <div class="tabela-container">
                 <table>
-                    <!-- caption: título da tabela, exibido abaixo dela pelo CSS -->
-                    <caption>Dados de referência da NASA (valores aproximados).</caption>
-                    <!-- thead: linha de cabeçalho com as células th -->
+                    <caption>Fonte: NASA (valores aproximados).</caption>
                     <thead>
                         <tr>
                             <th>Planeta</th>
-                            <th>Distância média do Sol</th>
+                            <th>Distância do Sol</th>
                             <th>Diâmetro</th>
                             <th>Duração do ano</th>
                             <th>Luas</th>
                         </tr>
                     </thead>
-                    <!-- tbody: uma linha por planeta, do mais próximo ao mais distante do Sol.
-                         O span com a classe "ponto" mostra a cor do planeta ao lado do nome. -->
+                    <!-- O span "ponto" mostra a cor do planeta ao lado do nome -->
                     <tbody>
                         <tr>
                             <td><span class="ponto mercurio"></span>Mercúrio</td>
@@ -290,134 +267,123 @@
             </div>
         </section>
 
-        <!-- ===== LINHA DO TEMPO DAS MISSÕES ===== -->
+        <!-- MISSÕES: lista ordenada, porque a ordem é cronológica.
+             A linha vertical e as bolinhas são feitas com position no CSS. -->
         <section id="missoes" class="secao">
-            <h2 class="titulo-secao">Linha do tempo das missões</h2>
-            <p class="intro-secao">
-                Algumas das missões que marcaram a exploração do espaço, em ordem cronológica.
-            </p>
-            <!-- Lista ordenada (ol), pois os eventos seguem uma ordem no tempo.
-                 A linha vertical e as bolinhas são desenhadas com position no CSS. -->
+            <h2>Missões que marcaram a exploração</h2>
             <ol class="linha-do-tempo">
                 <li class="evento">
                     <span class="ano">1957</span>
                     <h3>Sputnik 1</h3>
-                    <p>A União Soviética lança o primeiro satélite artificial da história e dá início à era espacial.</p>
+                    <p>A União Soviética coloca em órbita o primeiro satélite artificial. Começa a corrida espacial.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1961</span>
                     <h3>Vostok 1</h3>
-                    <p>Yuri Gagarin se torna o primeiro ser humano a ir ao espaço e a dar uma volta completa na Terra.</p>
+                    <p>Yuri Gagarin vira a primeira pessoa a ir ao espaço e dá uma volta completa na Terra.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1962</span>
                     <h3>Mariner 2</h3>
-                    <p>A sonda norte-americana passa por Vênus e se torna a primeira a visitar outro planeta com sucesso.</p>
+                    <p>A sonda passa perto de Vênus. É a primeira vez que uma nave visita outro planeta.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1969</span>
                     <h3>Apollo 11</h3>
-                    <p>Neil Armstrong e Buzz Aldrin são os primeiros seres humanos a caminhar na superfície da Lua.</p>
+                    <p>Neil Armstrong e Buzz Aldrin pisam na Lua.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1976</span>
                     <h3>Viking 1</h3>
-                    <p>A sonda pousa em Marte e envia por anos fotografias nítidas e dados do solo marciano.</p>
+                    <p>Pousa em Marte e passa anos mandando fotos e dados do solo.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1977</span>
                     <h3>Voyager 1 e 2</h3>
-                    <p>As sondas gêmeas exploram os planetas gigantes. A Voyager 2 é até hoje a única a visitar Urano e Netuno.</p>
+                    <p>As duas sondas visitam os planetas gigantes. A Voyager 2 continua sendo a única que passou por Urano e Netuno.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">1990</span>
-                    <h3>Telescópio Espacial Hubble</h3>
-                    <p>Colocado em órbita da Terra, revoluciona a astronomia com imagens livres da distorção da atmosfera.</p>
+                    <h3>Telescópio Hubble</h3>
+                    <p>Em órbita da Terra, tira fotos sem a distorção da atmosfera e muda a astronomia.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">2004</span>
                     <h3>Cassini-Huygens</h3>
-                    <p>Chega a Saturno e estuda seus anéis e luas por 13 anos. A sonda Huygens pousa em Titã em 2005.</p>
+                    <p>Chega a Saturno e estuda o planeta por 13 anos. Em 2005, a Huygens pousa na lua Titã.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">2012</span>
                     <h3>Curiosity</h3>
-                    <p>O jipe-robô pousa em Marte e encontra sinais de que o planeta já teve condições para abrigar vida.</p>
+                    <p>O jipe-robô pousa em Marte e encontra sinais de que o planeta já teve água e condições para a vida.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">2015</span>
                     <h3>New Horizons</h3>
-                    <p>A sonda passa por Plutão e revela uma planície de gelo em forma de coração na sua superfície.</p>
+                    <p>Passa por Plutão e mostra uma planície de gelo com formato de coração.</p>
                 </li>
                 <li class="evento">
                     <span class="ano">2021</span>
-                    <h3>Telescópio Espacial James Webb</h3>
-                    <p>O maior telescópio espacial já lançado passa a observar o universo em luz infravermelha.</p>
+                    <h3>Telescópio James Webb</h3>
+                    <p>O maior telescópio espacial já lançado começa a observar o universo em infravermelho.</p>
                 </li>
             </ol>
         </section>
 
-        <!-- ===== CURIOSIDADES =====
-             Cada curiosidade é um bloco com a classe "curiosidade" e texto justificado. -->
+        <!-- CURIOSIDADES: textos justificados -->
         <section id="curiosidades" class="secao">
-            <h2 class="titulo-secao">Curiosidades</h2>
-            <p class="intro-secao">Fatos surpreendentes sobre os nossos vizinhos no espaço.</p>
+            <h2>Curiosidades</h2>
             <div class="curiosidades">
                 <div class="curiosidade">
-                    <h3>Um dia mais longo que um ano</h3>
-                    <p>Vênus gira tão devagar que leva 243 dias terrestres para completar uma volta em torno de si mesmo, enquanto a volta em torno do Sol leva apenas 225 dias. Ou seja, lá um dia dura mais do que um ano.</p>
+                    <h3>Em Vênus, o dia é mais longo que o ano</h3>
+                    <p>Vênus gira muito devagar: leva 243 dias terrestres para dar uma volta em torno de si mesmo, mas só 225 para dar a volta no Sol. Então, por lá, um dia dura mais que um ano.</p>
                 </div>
                 <div class="curiosidade">
                     <h3>Uma tempestade maior que a Terra</h3>
-                    <p>A Grande Mancha Vermelha de Júpiter é uma tempestade gigante observada há mais de 150 anos. Mesmo tendo encolhido nas últimas décadas, ela ainda é mais larga do que o planeta Terra inteiro.</p>
+                    <p>A Grande Mancha Vermelha de Júpiter é observada há mais de 150 anos. Ela vem encolhendo, mas ainda é mais larga que o nosso planeta inteiro.</p>
                 </div>
                 <div class="curiosidade">
-                    <h3>O planeta que flutuaria</h3>
-                    <p>Saturno é o planeta menos denso do Sistema Solar, com densidade menor do que a da água. Por isso se costuma dizer que, se existisse uma banheira grande o bastante, ele ficaria boiando.</p>
+                    <h3>Saturno boiaria na água</h3>
+                    <p>A densidade de Saturno é menor que a da água. Se existisse uma banheira grande o suficiente, o planeta ficaria boiando, com anéis e tudo.</p>
                 </div>
                 <div class="curiosidade">
                     <h3>O maior vulcão conhecido</h3>
-                    <p>O Monte Olimpo, em Marte, tem cerca de 22 quilômetros de altura, quase três vezes a altura do Monte Everest. Sua base é tão larga que ocuparia uma área parecida com a do estado de São Paulo.</p>
+                    <p>O Monte Olimpo, em Marte, tem uns 22 km de altura, quase três vezes o Everest. A subida é tão suave e a base tão larga que quem estivesse lá em cima mal perceberia que está numa montanha.</p>
                 </div>
                 <div class="curiosidade">
-                    <h3>Ventos supersônicos</h3>
-                    <p>Netuno tem os ventos mais rápidos do Sistema Solar, que podem passar de 2.000 km/h. Isso é curioso porque o planeta recebe muito pouca energia do Sol, já que está a bilhões de quilômetros de distância.</p>
+                    <h3>Plutão já foi planeta</h3>
+                    <p>Até 2006, Plutão era considerado o nono planeta. Naquele ano, a União Astronômica Internacional mudou a definição de planeta e ele passou a ser chamado de planeta anão.</p>
                 </div>
                 <div class="curiosidade">
-                    <h3>Uma luz do passado</h3>
-                    <p>A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar até a Terra. Isso significa que, quando olhamos para o Sol, estamos vendo como ele era alguns minutos atrás, e não como ele está agora.</p>
+                    <h3>A luz do Sol chega atrasada</h3>
+                    <p>A luz do Sol leva cerca de 8 minutos e 20 segundos para chegar aqui. Quando olhamos para o Sol, estamos vendo como ele estava alguns minutos atrás.</p>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FORMULÁRIO DE CONTATO =====
-             Formulário apenas visual: o botão é do tipo "button", então nada é enviado. -->
+        <!-- CONTATO: formulário só de exemplo (o botão é type="button", então nada é enviado) -->
         <section id="contato" class="secao">
-            <h2 class="titulo-secao">Envie sua pergunta</h2>
+            <h2>Ficou com alguma dúvida?</h2>
             <p class="intro-secao">
-                Ficou com alguma dúvida sobre o Sistema Solar? Este formulário é apenas ilustrativo
-                e nenhuma informação é enviada.
+                Deixe sua pergunta aqui embaixo. O formulário é só de exemplo, então nada é enviado de verdade.
             </p>
             <form class="formulario" action="#">
-                <!-- Cada label se liga ao seu campo pelos atributos for e id (melhora a acessibilidade) -->
+                <!-- for e id ligam cada label ao seu campo -->
                 <label for="nome">Nome</label>
-                <input type="text" id="nome" name="nome" placeholder="Seu nome">
+                <input type="text" id="nome" name="nome">
                 <label for="email">E-mail</label>
-                <input type="email" id="email" name="email" placeholder="voce@exemplo.com">
+                <input type="email" id="email" name="email">
                 <label for="pergunta">Pergunta</label>
-                <textarea id="pergunta" name="pergunta" rows="5" placeholder="Escreva aqui a sua pergunta sobre o espaço"></textarea>
-                <!-- Mesmo estilo de botão da seção inicial (classe "botao" reaproveitada) -->
-                <button type="button" class="botao">Enviar pergunta</button>
+                <textarea id="pergunta" name="pergunta" rows="5"></textarea>
+                <button type="button" class="botao">Enviar</button>
             </form>
         </section>
 
     </main>
 
-    <!-- ===== RODAPÉ =====
-         id="rodape": elemento único, estilizado com seletor de ID -->
+    <!-- RODAPÉ: elemento único, por isso usa id -->
     <footer id="rodape">
-        <p class="rodape-titulo">Guia do Sistema Solar</p>
-        <!-- Links rápidos para as seções; no CSS os itens ficam com display: inline, lado a lado -->
+        <!-- Os itens desta lista ficam lado a lado com display: inline -->
         <ul>
             <li><a href="#inicio">Início</a></li>
             <li><a href="#planetas">Planetas</a></li>
@@ -426,14 +392,12 @@
             <li><a href="#curiosidades">Curiosidades</a></li>
             <li><a href="#contato">Contato</a></li>
         </ul>
-        <p>Atividade prática da Aula 06 de Web Design – Facens, 2026.</p>
-        <p>Integrantes: Gabriel Martins Antunes, Vitor Hugo Rosario do Santos e Matheus Giachetti.</p>
+        <p>Guia do Sistema Solar · Aula 06 de Web Design · Facens, 2026</p>
+        <p>Feito por Gabriel Martins Antunes, Vitor Hugo Rosario do Santos e Matheus Giachetti.</p>
     </footer>
 
-    <!-- ===== BOTÃO VOLTAR AO TOPO =====
-         Link que leva ao cabeçalho (#cabecalho). Com position: fixed ele fica
-         sempre no canto inferior direito da tela, mesmo durante a rolagem. -->
-    <a href="#cabecalho" id="voltar-topo" title="Voltar ao topo" aria-label="Voltar ao topo">&uarr;</a>
+    <!-- VOLTAR AO TOPO: usa a classe "botao" e o id para ficar fixo no canto da tela -->
+    <a href="#cabecalho" id="voltar-topo" class="botao" aria-label="Voltar ao topo">&uarr; topo</a>
 
 </body>
 </html>
