@@ -421,3 +421,76 @@ tbody tr:hover {
     margin: 0 8px 0 0;
     border-radius: 50%;
 }
+
+/* ---------- LINHA DO TEMPO DAS MISSÕES ---------- */
+
+.linha-do-tempo {
+    position: relative;         /* relative: referência para a linha vertical (::before) */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 0 0 50px;        /* padding com quatro valores: espaço só à esquerda, onde fica a linha */
+    list-style: none;           /* remove os números da lista; o ano já indica a ordem */
+}
+
+/* Linha vertical: position: absolute + top: 0 e bottom: 0 fazem ela
+   ocupar toda a altura da lista; left define a distância da borda esquerda */
+.linha-do-tempo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 18px;
+    width: 4px;
+    background-color: #2a3570;
+    border-radius: 2px;
+}
+
+/* Cada evento é um bloco com borda */
+.evento {
+    position: relative;         /* referência para a bolinha amarela do evento */
+    margin: 0 0 28px;
+    padding: 16px 20px;
+    background-color: #141b3d;
+    border: 1px solid #2a3570;
+    border-radius: 12px;
+    transition: border-color 0.3s, transform 0.3s;
+}
+
+/* Bolinha amarela sobre a linha: left negativo leva ela para fora do bloco, em cima da linha */
+.evento::before {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: -39px;
+    width: 16px;
+    height: 16px;
+    background-color: #ffcc33;
+    border: 3px solid #0b1026;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #ffcc33;
+}
+
+/* Hover: o evento se desloca levemente para a direita */
+.evento:hover {
+    border-color: #ffcc33;
+    transform: translateX(6px);
+}
+
+/* O ano é um span; display: block faz ele ocupar uma linha inteira, acima do título */
+.ano {
+    display: block;
+    color: #ffcc33;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.evento h3 {
+    margin: 4px 0 6px;
+    font-size: 20px;
+}
+
+.evento p {
+    margin: 0;
+    color: #c9cfe8;
+}
