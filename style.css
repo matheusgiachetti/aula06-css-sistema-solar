@@ -771,3 +771,30 @@ tbody tr:hover {
         font-size: 20px;
     }
 }
+
+/* =========================================================
+   RESUMO DAS PROPRIEDADES UTILIZADAS
+
+   PROPRIEDADES VISTAS EM AULA (Aula 06):
+   - color ............ cor do texto (body, títulos, links, etiquetas)
+   - background-color . cor de fundo (página, cabeçalho, cartões, planetas)
+   - font-family ...... fontes do texto (body) e dos títulos (h1, h2, h3)
+   - font-size ........ tamanho do texto em todas as seções
+   - margin ........... uniforme (.astro, #rodape p) e com vários valores (.secao, #inicio h1)
+   - padding .......... uniforme (.formulario) e com vários valores (#cabecalho, .linha-do-tempo)
+   - border ........... cartões, tabela, eventos, campos do formulário e anel de Saturno
+   - width / height ... Sol e planetas, miniaturas, botão voltar ao topo
+   - display .......... block (label, .ano, #menu a), inline (#rodape li) e flex (menu, cartões)
+   - position ......... relative (.cartao, .evento), absolute (.etiqueta, anel) e fixed (#voltar-topo)
+   - top / right / bottom / left: etiqueta, anel de Saturno, linha do tempo e botão fixo
+   - text-align ....... center (títulos e seção inicial) e justify (curiosidades)
+   - seletores de classe (.cartao, .botao, .secao...) e de ID (#cabecalho, #rodape, #sol...)
+
+   PROPRIEDADES ADICIONAIS:
+   - design: border-radius, box-shadow, text-shadow, line-height, letter-spacing,
+     max-width, text-transform, background-image (degradês), box-sizing, list-style
+   - interatividade: :hover, :focus, transition, transform, cursor, opacity,
+     outline, scroll-behavior
+   - responsividade: @media (900px e 600px), flex-wrap, gap, flex-direction,
+     justify-content, align-items, overflow-x, white-space
+   ========================================================= */
