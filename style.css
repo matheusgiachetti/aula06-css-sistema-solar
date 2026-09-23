@@ -576,3 +576,74 @@ tbody tr:hover {
 .formulario .botao {
     width: 100%;
 }
+
+/* ---------- RODAPÉ (seletor de ID: elemento único) ---------- */
+
+#rodape {
+    padding: 40px 20px;
+    background-color: #070b1c;
+    border-top: 2px solid #ffcc33;
+    color: #9aa3c7;
+    font-size: 14px;
+    text-align: center;
+}
+
+.rodape-titulo {
+    color: #ffcc33;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#rodape ul {
+    margin: 0 0 16px;
+    padding: 0;
+    list-style: none;
+}
+
+/* li é block por padrão (um embaixo do outro); display: inline coloca os links lado a lado */
+#rodape li {
+    display: inline;
+    margin: 0 10px;             /* margin com dois valores: espaço só nas laterais */
+}
+
+#rodape a {
+    color: #e6e9f5;
+    transition: color 0.3s;
+}
+
+#rodape a:hover,
+#rodape a:focus {
+    color: #ffcc33;
+}
+
+#rodape p {
+    margin: 6px;                /* margin uniforme: pouco espaço entre os parágrafos do rodapé */
+}
+
+/* ---------- BOTÃO VOLTAR AO TOPO ---------- */
+
+#voltar-topo {
+    position: fixed;            /* fixed: o botão fica sempre no mesmo lugar da tela, mesmo rolando a página */
+    right: 24px;                /* distância da borda direita da tela */
+    bottom: 24px;               /* distância da borda de baixo da tela */
+    z-index: 10;                /* adicional: garante que o botão fique por cima do conteúdo */
+    display: flex;              /* flex + align-items + justify-content centralizam a seta */
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background-color: #ffcc33;
+    color: #0b1026;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 50%;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+    opacity: 0.85;              /* levemente transparente para não cobrir o conteúdo */
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#voltar-topo:hover,
+#voltar-topo:focus {
+    opacity: 1;
+    transform: scale(1.1);      /* cresce 10% ao receber o mouse */
+}
