@@ -42,3 +42,64 @@ a {
     color: #ffcc33;
     text-decoration: none;
 }
+
+/* ---------- CABEÇALHO (seletor de ID: elemento único) ---------- */
+
+#cabecalho {
+    display: flex;                              /* flex: coloca o nome do site e o menu lado a lado */
+    justify-content: space-between;             /* adicional: nome à esquerda e menu à direita */
+    align-items: center;                        /* adicional: centraliza os dois na vertical */
+    flex-wrap: wrap;                            /* adicional: o menu desce de linha se faltar espaço */
+    gap: 16px;                                  /* adicional: espaço fixo entre o nome e o menu */
+    padding: 18px 40px;                         /* padding com dois valores: vertical e horizontal */
+    background-color: #070b1c;                  /* azul ainda mais escuro que o fundo da página */
+    border-bottom: 2px solid #ffcc33;           /* linha amarela separando o cabeçalho do conteúdo */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);  /* adicional: sombra que "descola" o cabeçalho da página */
+}
+
+/* Nome do site */
+.logo {
+    color: #ffcc33;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 1px;                             /* adicional: afasta um pouco as letras */
+    text-shadow: 0 0 12px rgba(255, 204, 51, 0.5);   /* adicional: brilho amarelo em volta do texto */
+}
+
+/* Pequeno sol ao lado do nome do site */
+.logo-simbolo {
+    display: inline-block;      /* fica na mesma linha do texto, mas aceita width e height */
+    width: 20px;                /* largura do círculo */
+    height: 20px;               /* altura igual à largura para formar um círculo */
+    margin: 0 8px -3px 0;       /* margin com quatro valores (topo, direita, base, esquerda) */
+    border-radius: 50%;         /* adicional: 50% de arredondamento transforma o quadrado em círculo */
+    background-color: #ffcc33;
+    box-shadow: 0 0 10px #ffcc33;
+}
+
+/* Lista do menu */
+#menu ul {
+    display: flex;              /* flex: itens do menu em linha, e não um embaixo do outro */
+    flex-wrap: wrap;            /* adicional: quebra de linha em telas estreitas */
+    gap: 6px;
+    margin: 0;
+    padding: 0;
+    list-style: none;           /* remove as bolinhas da lista */
+}
+
+/* Links do menu */
+#menu a {
+    display: block;             /* block: o link ocupa toda a área do item, facilitando o clique */
+    padding: 8px 14px;
+    color: #e6e9f5;
+    font-size: 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;  /* adicional: troca de cor suave */
+}
+
+/* :hover (mouse em cima) e :focus (navegação pelo teclado) destacam o link */
+#menu a:hover,
+#menu a:focus {
+    background-color: #ffcc33;
+    color: #0b1026;
+}

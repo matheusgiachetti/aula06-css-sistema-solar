@@ -16,6 +16,29 @@
 </head>
 <body>
 
+    <!-- ===== CABEÇALHO =====
+         id="cabecalho" porque é um elemento único na página (estilizado com seletor de ID no CSS).
+         Ele também é o destino do botão "voltar ao topo". -->
+    <header id="cabecalho">
+        <!-- Nome do site: o link leva de volta para a seção inicial -->
+        <a href="#inicio" class="logo">
+            <!-- span vazio com a classe "logo-simbolo": um pequeno sol desenhado só com CSS -->
+            <span class="logo-simbolo"></span>
+            Guia do Sistema Solar
+        </a>
+        <!-- Menu de navegação: cada link aponta para o id de uma seção (navegação por âncora) -->
+        <nav id="menu" aria-label="Menu principal">
+            <ul>
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#planetas">Planetas</a></li>
+                <li><a href="#comparativo">Comparativo</a></li>
+                <li><a href="#missoes">Missões</a></li>
+                <li><a href="#curiosidades">Curiosidades</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
     <!-- ===== CONTEÚDO PRINCIPAL =====
          A tag main agrupa todas as seções da página. Cada seção tem um id
          que é usado pelos links do menu para a navegação por âncora. -->
