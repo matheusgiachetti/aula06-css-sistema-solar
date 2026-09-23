@@ -1,0 +1,44 @@
+/* =========================================================
+   GUIA DO SISTEMA SOLAR - style.css
+   Folha de estilos EXTERNA, ligada ao index.html pela tag <link>.
+   Paleta: azul-noite no fundo, texto claro e amarelo-sol nos destaques.
+   ========================================================= */
+
+/* ---------- AJUSTES GERAIS ---------- */
+
+/* box-sizing: border-box faz a largura (width) já incluir o padding e a borda,
+   o que facilita calcular o tamanho dos elementos (propriedade adicional) */
+* {
+    box-sizing: border-box;
+}
+
+/* scroll-behavior: smooth deixa a rolagem suave ao clicar nos links de âncora
+   do menu (propriedade adicional) */
+html {
+    scroll-behavior: smooth;
+}
+
+/* body: estilo base que vale para a página inteira */
+body {
+    margin: 0;                                   /* margin uniforme: remove a margem padrão do navegador */
+    padding: 0;                                  /* padding uniforme: nenhum espaço interno extra */
+    background-color: #0b1026;                   /* fundo azul-noite, a cor do "espaço" */
+    color: #e6e9f5;                              /* texto claro para contrastar com o fundo escuro */
+    font-family: "Segoe UI", Arial, sans-serif;  /* fonte principal, com alternativas caso ela não exista */
+    font-size: 16px;                             /* tamanho base do texto */
+    line-height: 1.6;                            /* adicional: mais espaço entre as linhas facilita a leitura */
+}
+
+/* Títulos usam outra família de fonte para se diferenciarem do texto comum */
+h1,
+h2,
+h3 {
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    line-height: 1.25;
+}
+
+/* Links em geral: amarelo-sol e sem sublinhado */
+a {
+    color: #ffcc33;
+    text-decoration: none;
+}
