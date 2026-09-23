@@ -253,3 +253,106 @@ a {
     color: #ffcc33;
     transform: translateY(-3px);
 }
+
+/* ---------- SEÇÕES DE CONTEÚDO (classe reaproveitada) ---------- */
+
+.secao {
+    max-width: 1100px;          /* adicional: impede que o conteúdo se estique demais em telas largas */
+    margin: 0 auto;             /* margin com dois valores: 0 em cima/embaixo e auto nas laterais (centraliza) */
+    padding: 60px 20px;
+}
+
+/* Título de cada seção */
+.titulo-secao {
+    margin: 0 0 12px;
+    font-size: 32px;
+    color: #ffcc33;
+    text-align: center;         /* text-align: center centraliza os títulos das seções */
+    letter-spacing: 1px;
+}
+
+/* Texto de introdução logo abaixo do título */
+.intro-secao {
+    max-width: 700px;
+    margin: 0 auto 36px;
+    color: #c9cfe8;
+    text-align: center;
+}
+
+/* ---------- CARTÕES DOS PLANETAS ---------- */
+
+/* Contêiner dos cartões */
+.cartoes {
+    display: flex;              /* flex: cartões lado a lado */
+    flex-wrap: wrap;            /* adicional: os cartões quebram de linha quando não cabem */
+    justify-content: center;
+    gap: 24px;                  /* adicional: espaço igual entre os cartões */
+}
+
+/* Cartão individual */
+.cartao {
+    position: relative;         /* relative: vira referência para a etiqueta com position: absolute */
+    width: 240px;               /* largura fixa: quatro cartões por linha no computador */
+    padding: 24px 20px 20px;
+    background-color: #141b3d;
+    border: 1px solid #2a3570;  /* border: borda fina azulada em volta do cartão */
+    border-radius: 16px;        /* adicional: cantos arredondados */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+/* Hover: o cartão sobe, ganha borda amarela e um brilho */
+.cartao:hover {
+    transform: translateY(-8px);
+    border-color: #ffcc33;
+    box-shadow: 0 12px 28px rgba(255, 204, 51, 0.25);
+}
+
+/* Etiqueta do tipo: position: absolute + top e right prendem ela no canto superior direito */
+.etiqueta {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    padding: 4px 10px;
+    color: #0b1026;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;  /* adicional: deixa o texto da etiqueta em maiúsculas */
+    letter-spacing: 1px;
+    border-radius: 12px;
+}
+
+/* Uma cor de etiqueta para cada tipo de planeta */
+.tipo-rochoso { background-color: #e07a4f; }
+.tipo-gasoso  { background-color: #f2c46d; }
+.tipo-gelo    { background-color: #8fd8e0; }
+
+/* Miniatura redonda do planeta dentro do cartão */
+.miniatura {
+    width: 56px;
+    height: 56px;
+    margin: 0 0 14px;
+    border-radius: 50%;
+    box-shadow: inset -6px -6px 12px rgba(0, 0, 0, 0.45);
+}
+
+.cartao h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    color: #ffcc33;
+}
+
+.cartao p {
+    margin: 0 0 12px;
+    font-size: 15px;
+}
+
+/* Lista de fatos rápidos, separada do texto por uma linha */
+.fatos {
+    margin: 0;
+    padding: 12px 0 0 18px;     /* padding com quatro valores: espaço em cima e à esquerda */
+    border-top: 1px solid #2a3570;
+    color: #c9cfe8;
+    font-size: 13px;
+}

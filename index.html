@@ -100,6 +100,110 @@
             <a href="#planetas" class="botao">Conhecer os planetas</a>
         </section>
 
+        <!-- ===== CARTÕES DOS PLANETAS =====
+             A classe "secao" é reaproveitada por todas as seções de conteúdo
+             para manter a mesma largura máxima e o mesmo espaçamento. -->
+        <section id="planetas" class="secao">
+            <h2 class="titulo-secao">Os oito planetas</h2>
+            <p class="intro-secao">
+                Os planetas são divididos em três grupos: os rochosos, mais próximos do Sol; os gigantes
+                gasosos, formados principalmente por hidrogênio e hélio; e os gigantes de gelo, os mais distantes.
+            </p>
+            <!-- Contêiner flex que organiza os cartões em linhas -->
+            <div class="cartoes">
+                <!-- Cartão de Mercúrio. A classe "cartao" é a mesma para os oito planetas. -->
+                <article class="cartao">
+                    <!-- Etiqueta do tipo, posicionada no canto do cartão com position: absolute -->
+                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <!-- Miniatura do planeta: reaproveita a classe de cor usada no desenho inicial -->
+                    <div class="miniatura mercurio"></div>
+                    <h3>Mercúrio</h3>
+                    <p>O menor planeta e o mais próximo do Sol. Quase sem atmosfera, vai de 430 °C durante o dia a −180 °C à noite.</p>
+                    <ul class="fatos">
+                        <li>1º planeta a partir do Sol</li>
+                        <li>Um dia solar dura 176 dias terrestres</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Vênus -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <div class="miniatura venus"></div>
+                    <h3>Vênus</h3>
+                    <p>O planeta mais quente do Sistema Solar. Sua atmosfera espessa de gás carbônico prende o calor como uma estufa.</p>
+                    <ul class="fatos">
+                        <li>Temperatura média de cerca de 464 °C</li>
+                        <li>Gira no sentido contrário ao da Terra</li>
+                    </ul>
+                </article>
+                <!-- Cartão da Terra -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <div class="miniatura terra"></div>
+                    <h3>Terra</h3>
+                    <p>Nosso planeta, o único onde se conhece a existência de vida, graças à água líquida e à atmosfera protetora.</p>
+                    <ul class="fatos">
+                        <li>Cerca de 71% da superfície é água</li>
+                        <li>Uma lua natural: a Lua</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Marte -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-rochoso">Rochoso</span>
+                    <div class="miniatura marte"></div>
+                    <h3>Marte</h3>
+                    <p>O "planeta vermelho" deve sua cor ao óxido de ferro do solo. Abriga o Monte Olimpo, o maior vulcão conhecido.</p>
+                    <ul class="fatos">
+                        <li>Um dia dura 24 h 37 min</li>
+                        <li>Luas: Fobos e Deimos</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Júpiter -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-gasoso">Gasoso</span>
+                    <div class="miniatura jupiter"></div>
+                    <h3>Júpiter</h3>
+                    <p>O maior planeta do Sistema Solar: caberiam mais de 1.300 Terras dentro dele. Tem a famosa Grande Mancha Vermelha.</p>
+                    <ul class="fatos">
+                        <li>Um dia dura cerca de 10 horas</li>
+                        <li>Maior lua: Ganimedes</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Saturno -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-gasoso">Gasoso</span>
+                    <div class="miniatura saturno"></div>
+                    <h3>Saturno</h3>
+                    <p>Famoso pelos anéis de gelo e rocha, é tão pouco denso que, em teoria, flutuaria em uma banheira gigante.</p>
+                    <ul class="fatos">
+                        <li>Um dia dura cerca de 10 h 30 min</li>
+                        <li>Maior lua: Titã</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Urano -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-gelo">Gigante de gelo</span>
+                    <div class="miniatura urano"></div>
+                    <h3>Urano</h3>
+                    <p>Gira "deitado", com o eixo inclinado cerca de 98°. O metano da atmosfera dá a ele a cor azul-esverdeada.</p>
+                    <ul class="fatos">
+                        <li>Um dia dura cerca de 17 horas</li>
+                        <li>Descoberto em 1781 por William Herschel</li>
+                    </ul>
+                </article>
+                <!-- Cartão de Netuno -->
+                <article class="cartao">
+                    <span class="etiqueta tipo-gelo">Gigante de gelo</span>
+                    <div class="miniatura netuno"></div>
+                    <h3>Netuno</h3>
+                    <p>O planeta mais distante do Sol, com os ventos mais fortes do Sistema Solar. Foi descoberto por cálculos matemáticos.</p>
+                    <ul class="fatos">
+                        <li>Um dia dura cerca de 16 horas</li>
+                        <li>Maior lua: Tritão</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
     </main>
 
 </body>
