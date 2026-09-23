@@ -356,3 +356,68 @@ a {
     color: #c9cfe8;
     font-size: 13px;
 }
+
+/* ---------- TABELA COMPARATIVA ---------- */
+
+/* overflow-x: auto cria uma barra de rolagem horizontal se a tabela não couber na tela */
+.tabela-container {
+    overflow-x: auto;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+table {
+    width: 100%;                /* a tabela ocupa toda a largura disponível */
+    border-collapse: collapse;  /* adicional: junta as bordas das células em uma linha só */
+    background-color: #141b3d;
+    font-size: 15px;
+}
+
+caption {
+    caption-side: bottom;       /* mostra a legenda abaixo da tabela */
+    padding: 12px;
+    color: #c9cfe8;
+    font-size: 14px;
+}
+
+/* Células de cabeçalho e de dados */
+th,
+td {
+    padding: 14px 16px;
+    border: 1px solid #2a3570;  /* border: grade da tabela */
+    text-align: center;
+    white-space: nowrap;        /* adicional: evita que os números quebrem em duas linhas */
+}
+
+th {
+    background-color: #1d2a6b;
+    color: #ffcc33;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Primeira coluna (nome do planeta) alinhada à esquerda e em negrito */
+td:first-child {
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Linhas pares com fundo levemente diferente (efeito "zebra") */
+tbody tr:nth-child(even) {
+    background-color: #18214a;
+}
+
+/* Hover na linha ajuda a acompanhar os dados de um planeta */
+tbody tr:hover {
+    background-color: #2a3570;
+}
+
+/* Bolinha com a cor do planeta ao lado do nome */
+.ponto {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px 0 0;
+    border-radius: 50%;
+}
